@@ -7,3 +7,31 @@
 .date-strip button.hk-date.selected{background:#754b6a;border-color:#754b6a;color:#fff}
 .date-strip button.hk-date.selected small,.date-strip button.hk-date.selected span{color:#f5eaf2}
 .date-strip button.hk-date::before{content:"HK";position:absolute;top:3px;right:5px;font:700 8px/1.2 sans-serif;letter-spacing:.04em;opacity:.8}
+
+/* Seven-date wishlist planner: full itinerary previews, touch-friendly cards. */
+.wishlist-date-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}
+.date-choice-intro{color:var(--muted);line-height:1.6}
+.wish-date-option{display:flex;flex-direction:column;gap:10px;width:100%;min-width:0;padding:16px;border:1px solid #d8dfd7;border-radius:14px;background:#eef4ef;color:var(--ink);text-align:left;cursor:pointer;transition:border-color .15s,background .15s,transform .15s}
+.wish-date-option.hong-kong{background:#f0e4ed;border-color:#d8c5d5}
+.wish-date-option:hover,.wish-date-option:focus-visible{border-color:var(--green);background:#e2eee3;transform:translateY(-1px)}
+.wish-date-option.hong-kong:hover,.wish-date-option.hong-kong:focus-visible{background:#ead8e5;border-color:#754b6a}
+.wish-date-option:focus-visible{outline:3px solid #b59bc5;outline-offset:2px}
+.wish-date-option:disabled{opacity:.6;cursor:wait}
+.wish-date-top{display:flex;align-items:center;gap:9px;width:100%;min-width:0;flex-wrap:wrap}
+.wish-date-number{font:20px Georgia,serif;color:#789385}
+.wish-date-heading{flex:1;min-width:100px;display:flex;flex-direction:column;gap:3px}
+.wish-date-heading strong{font:600 18px Georgia,serif;line-height:1.2}
+.wish-date-heading small{font-size:11px;color:#6d756e}
+.wish-date-count{font-size:10px;font-weight:700;padding:5px 8px;border-radius:30px;background:#d5e8d9;color:#345c47;white-space:nowrap}
+.wish-date-count.busy{background:#f5dfc2;color:#795125}
+.wish-preview-label{font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:#65746c;font-weight:700}
+.wish-date-plans{display:flex;flex-direction:column;gap:7px;flex:1;width:100%;min-width:0}
+.wish-preview-event{display:flex;gap:9px;align-items:flex-start;font-size:12px;line-height:1.45;min-width:0}
+.wish-preview-event strong{font-size:11px;flex-shrink:0;color:#385746;min-width:39px}
+.wish-preview-event>span{overflow-wrap:anywhere}
+.wish-date-empty{font-size:12px;color:#58725d;font-style:italic}
+.wish-preview-more{font-size:11px;font-weight:600;color:#6d536c}
+.wish-date-choose{display:flex;align-items:center;justify-content:space-between;width:100%;gap:8px;margin-top:auto;padding-top:11px;border-top:1px solid #cfded3;font-size:12px;font-weight:750;color:#28583e}
+.wish-date-option.hong-kong .wish-date-choose{color:#754b6a;border-top-color:#d8bfd2}
+@media(max-width:760px){.wishlist-date-grid{grid-template-columns:1fr;gap:11px}.wish-date-option{min-height:164px;padding:15px}.wish-date-heading strong{font-size:18px}.modal:has(.wishlist-date-grid){padding:22px 16px;max-height:96dvh}.wish-date-plans{gap:5px}}
+@media(min-width:761px) and (max-width:960px){.wishlist-date-grid{grid-template-columns:1fr}}

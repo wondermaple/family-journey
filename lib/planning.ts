@@ -3,7 +3,7 @@ export function dayLabel(d:string,zh=false){return new Date(d+'T12:00:00Z').toLo
 export function weekday(d:string,zh=false){return new Date(d+'T12:00:00Z').toLocaleDateString(zh?'zh-HK':'en-GB',{weekday:'short',timeZone:'UTC'});}
 export function stayFor(data:any,date:string){return data.stays.find((s:any)=>!s.base&&s.start<=date&&date<s.end)||data.stays.find((s:any)=>s.base&&s.start<=date&&date<s.end);}
 export function cityFor(data:any,date:string){return stayFor(data,date)?.city||(date<'2027-01-24'||date>='2027-02-20'?'Travel':'Penang');}
-export function suggestions(data:any,w:any){return dates.filter(d=>w.region==='Hong Kong'?d>='2027-02-12'&&d<='2027-02-19':d>='2027-01-25'&&d<='2027-02-10').filter(d=>w.region==='Hong Kong'||cityFor(data,d)==='Penang').filter(d=>!data.events.some((e:any)=>e.date===d&&e.id!==w.eventId)).sort((a,b)=>a===w.preferred?-1:b===w.preferred?1:a.localeCompare(b)).slice(0,3);}
+export function suggestions(data:any,w:any){return dates.filter(d=>w.region==='Hong Kong'?d>='2027-02-12'&&d<='2027-02-19':d>='2027-01-25'&&d<='2027-02-10').filter(d=>w.region==='Hong Kong'||cityFor(data,d)==='Penang').sort((a,b)=>a===w.preferred?-1:b===w.preferred?1:a.localeCompare(b)).slice(0,7);}
 // Hong Kong Observatory 2027 Gregorian–Lunar conversion table.
 // Fixed trip-range mapping avoids ICU/browser calendar differences in 2027.
 // https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2027e.pdf
