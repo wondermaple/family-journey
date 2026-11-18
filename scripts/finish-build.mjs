@@ -4,5 +4,6 @@ copyFileSync('docs/index.html','docs/guests/index.html');
 mkdirSync('docs/ccepi',{recursive:true});
 copyFileSync('ccepi/index.html','docs/ccepi/index.html');
 copyFileSync('ccepi/app.js','docs/ccepi/app.js');
+copyFileSync('ccepi/editorial.json','docs/ccepi/editorial.json');
 cpSync('ccepi/data','docs/ccepi/data',{recursive:true,force:true});
 writeFileSync('docs/.nojekyll','');
